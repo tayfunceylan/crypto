@@ -17,18 +17,18 @@ def main():
 
 def des_encrypt(x, k):
     keys = key_gen(k)
-    y = des(x, keys, "encrypt")
+    y = des(x, keys)
     return y
 
 
 def des_decrypt(x, k):
     keys = key_gen(k)
     keys.reverse()
-    x = des(x, keys, "decrypt")
+    x = des(x, keys)
     return x
 
 
-def des(x, keys, mode):
+def des(x, keys):
     after_init_perm = permutation(x, des_tables.ip)
     # print("After initial permutation:\n%s" % after_init_perm)
 
